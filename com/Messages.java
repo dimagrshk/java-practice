@@ -1,5 +1,10 @@
 package com;
 
+/*
+ * Class with const string
+ * for logging and patterns
+ */
+
 public class Messages {
     public static final String ADDED_MESSAGE = "Object added to collection";
     public static final String DECLINED_MESSAGE = "Object declined";

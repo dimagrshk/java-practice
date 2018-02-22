@@ -1,10 +1,26 @@
 package com;
 
+/*
+ * Class contains info about Airplane ticket
+ *
+ * @author Dmytro Hrishko
+ * @version 0.1
+ */
+
 import java.text.DateFormat;
 import java.util.Date;
 
 public class Ticket {
     // atributs
+    /*
+     * numberOfTicket - Unique number of ticket
+     * startPoint - Start of fly
+     * destination - Finish of fly
+     * firstName - First name of passenger
+     * lastName - Last name of passenger
+     * dateApply - Date of reserve of ticket
+     *
+     */
     private String numberOfTicket;
     private String startPoint;
     private String destination;
@@ -13,9 +29,17 @@ public class Ticket {
     private Date dateApply;
     // methods
 
-
-    public Ticket() { //default
+    /*
+     * Default constructor
+     *
+     * @see Ticket#Ticket()
+     */
+    public Ticket() {
     }
+
+    /*
+     * Constructor with parameters
+     */
 
     public Ticket(String numberOfTicket, String startPoint, String destination, String firstName, String lastName, Date dateApply) throws IllegalArgumentException {
         String EMPTY = "";

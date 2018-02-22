@@ -21,10 +21,12 @@ public class Main {
 
     private static final Logger log = Logger.getLogger(Main.class);
 
+    /*
+     * Program for read data structs from file, validate, order it and save it to json file
+     */
 
     public static void main(String[] args) {
-        // TODO input from console
-        String pathFile = "tickets.csv";
+        String pathFile = args[1];
         List<Ticket> list = new ArrayList<>();
         list = readFile(pathFile, list);
 
@@ -56,6 +58,13 @@ public class Main {
         log.info(finalMessage);
     }
 
+    /*
+     * Function for transform array of string to Ticket object
+     *
+     * @params ss - array of string
+     * @return Ticket object
+     */
+
     public static Ticket lineToTicket(String [] ss) {
         Ticket result = null;
         Date dateApply = stringToDate(ss[5]);
@@ -80,6 +89,12 @@ public class Main {
         return result;
     }
 
+    /*
+     * Function for transform string to Date type
+     *
+     * @params s - string for parse
+     * @return Date object
+     */
 
     public static Date stringToDate(String s) {
 
@@ -95,6 +110,15 @@ public class Main {
             return result;
         }
     }
+
+    /*
+     * Function for read file and transform its in list of objects
+     *
+     * @params path - path to file
+     * @params list - list of objects type A
+     *
+     * @return list of objects type A
+     */
 
     public static <A> List readFile(String path, List<A> list){
         BufferedReader br = null;
@@ -130,7 +154,13 @@ public class Main {
     }
 
 
-
+    /*
+     * Function for transform collection of objects to json
+     *
+     * @params list of objects type A
+     *
+     * @return list of strings
+     */
     public static <A> String collectionToJson(List<A> objects) {
         String s = null;
         ObjectMapper mapper = new ObjectMapper();
